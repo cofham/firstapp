@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- mvc:annotation-driven 요소를 지정  
+	스프링 mvc를 이용하는데 필요한 컴포넌트의 빈 정의가 자동으로 수행  -->
+	<mvc:annotation-driven/>
+	<!-- example.app 패키지 아래에 있는 스테레오 타입 애너테이션이 지정된 클래스가 스캔된 후
+	애플리케이션 컨텍스트에 빈으로 등록 -->
+	<context:component-scan base-package="example.app"/>
+	<mvc:view-resolvers>
+		<!-- mvc:view resolvers 요소의 자식요소로 mvc:jsp 요소를 지정 
+		JSP의 ViewResolver를 설정할 수 있다.-->
+		<mvc:jsp/>
+	</mvc:view-resolvers>
+</beans>
+
+<!-- DispatcherServlet용 빈 정의 파일 -->

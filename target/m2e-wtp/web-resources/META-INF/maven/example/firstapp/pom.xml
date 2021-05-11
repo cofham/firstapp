@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>example</groupId>
+  <artifactId>firstapp</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>firstapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <!-- 스프링 IO 플랫폼의 <dependencyManagement>정의를 임포트 -->
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>io.spring.platform</groupId>
+  			<artifactId>platform-bom</artifactId>
+  			<version>2.0.8.RELEASE</version>
+  			<type>pom</type>
+  			<scope>import</scope>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    </dependency>
+
+	<!-- 서블릿 API를 위한 jar 파일을 의존 라이브러리로 지정 -->
+	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <scope>provided</scope>
+	</dependency>
+
+	<!-- JSP 표준 태그 라이브러리(JSP Standard Tag Library)의 jar 파일을 의존 라이브러리로 지정 -->
+	<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+	<dependency>
+	    <groupId>org.apache.taglibs</groupId>
+	    <artifactId>taglibs-standard-impl</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+
+	<!-- 의존 라이브러리로 스프링 MVC 모듈을 지정 -->
+	<!-- Spring dependencies -->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    </dependency>
+
+	<!-- 의존 라이브러리로 Hibernate Validator(Bean Validation 참조 구현체)를 지정 -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    </dependency>
+
+	<!-- SLF4J API에 로깅 처리를 브리지하는 JCL 구현 라이브러리 -->
+	<!-- https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>jcl-over-slf4j</artifactId>
+	    </dependency>
+
+		
+	<!-- SLF4J 구현 라이브러리 -->
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    </dependency>
+  </dependencies>
+  <build>
+    <finalName>firstapp</finalName>
+    <pluginManagement>
+    	<plugins>
+    		<!-- 컴파일할 소스 파일의 자바 버전과 컴파일 후의 클래스 파일의 자바 버전을 정의 -->
+    		<plugin>
+    			<artifactId>maven-compiler-plugin</artifactId>
+    			<configuration>
+    				<source>1.8</source>
+    				<target>1.8</target>
+    			</configuration>
+    		</plugin>
+    	</plugins>
+    </pluginManagement>
+  </build>
+</project>
